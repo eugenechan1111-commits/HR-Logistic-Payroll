@@ -33,7 +33,7 @@ export default function PayrollPage() {
       ph_ot_multiplier: 2.0,
     };
     (settingsRows ?? []).forEach((r) => {
-      (settings as Record<string, number>)[r.key] = parseFloat(r.value);
+      (settings as unknown as Record<string, number>)[r.key] = parseFloat(r.value);
     });
 
     const computed = buildPayrollRows(
