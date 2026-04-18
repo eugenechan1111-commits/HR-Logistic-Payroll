@@ -104,7 +104,7 @@ export async function POST(req: NextRequest) {
     };
     if (settingsRows) {
       settingsRows.forEach((r) => {
-        (settings as Record<string, number>)[r.key] = parseFloat(r.value);
+        (settings as unknown as Record<string, number>)[r.key] = parseFloat(r.value);
       });
     }
 
